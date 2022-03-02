@@ -1,0 +1,32 @@
+{
+  "name": "teamprofile-gen",
+  "version": "1.0.0",
+  "description": "A team profile generator buit with Node.js",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grdnd/teamProfile-gen.git"
+  },
+  "keywords": [
+    "team",
+    "profile",
+    "gen",
+    "generator"
+  ],
+  "author": "Gordon Do",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grdnd/teamProfile-gen/issues"
+  },
+  "homepage": "https://github.com/grdnd/teamProfile-gen#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.5.1"
+  }
+}
