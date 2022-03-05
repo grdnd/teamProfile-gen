@@ -1,0 +1,61 @@
+:root {
+    --red: #ED6A5A;
+    --light: #F4F1BB;
+    --green: #C8D9BC;
+    --darkgreen: #426B69;
+    --blue: #9BC1BC;
+    --darkblue: #3c6675;
+}
+
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Voltaire', sans-serif;
+    background-color: var(--light);
+}
+
+.columns {
+    margin: auto;
+}
+
+.header {
+    text-align: right;
+    margin-bottom: 25px;
+    background-color: var(--red);
+    font-size: 5rem;
+    color: var(--light);
+    /* box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5); */
+}
+
+.header-text {
+    font-family: 'Bebas Neue', cursive;
+    position: relative;
+    top: 39px; left: 7px;
+}
+
+.card {
+    height: auto;
+}
+
+#managerRole {
+    background-color: var(--darkblue);
+}
+
+#engineerRole {
+    background-color: var(--blue)
+}
+
+#internRole {
+    background-color: var(--green);
+}
+/* .column {
+    margin: 0 5px 0 5px;
+    padding: 0 5px 0 5px;
+} */
