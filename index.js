@@ -9,19 +9,19 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
 // Create an array to store team members
-const team = [];
+const teamProfile = [];
 
 // Function initializes the app
 function init() {
-    managerQuery();
+    managerPrompt();
 }
 
 // Prompt user for Manager's information on startup
-function managerQuery() {
+function managerPrompt() {
     return inquirer.prompt ([
         {
             type: 'input',
-            name: 'name',
+            name: 'managerName',
             message: "Start by entering your team manager's name: ",
             // boolean checks for valid entry
             validate: input => {
@@ -35,7 +35,7 @@ function managerQuery() {
         },
         {
             type: 'input',
-            name: 'id',
+            name: 'managerId',
             message: "Please enter team manager's ID: ",
             // boolean checks if member ID is entered as a valid number
             validate: input => {
@@ -48,22 +48,16 @@ function managerQuery() {
         },
         {
             type: 'input',
-            name: 'email',
+            name: 'managerEmail',
             message: "Please enter your manager's email: ",
             // using validate command and boolean to check if valid email is entered
-            validate: email => {
-                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
-                if (email) {
-                    return true;
-                } else {
-                    console.log('*Please enter a valid email address!*');
-                    return false;
-                }
+            validate: managerEmail => {
+                return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(managerEmail)
             }
         },
         {
             type: 'input',
-            name: 'officeNumber',
+            name: 'managerOfficeNumber',
             message: "Please enter your Manager's office number: ",
             // boolean checks if office number is a valid number
             validate: officeNumber => {
@@ -78,9 +72,9 @@ function managerQuery() {
     ])
     // stores manager information to team array and opens main menu
     .then(input => { 
-        const manager = new Manager (input.name, input.id, input.email, input.officeNumber);
-        team.push(manager);
-        console.log('Manager successfully added to the team!' + manager);
+        const manager = new Manager (input.managerName, input.managerId, input.managerEmail, input.managerOfficeNumber);
+        teamProfile.push(manager);
+        console.log('Manager successfully added to the team!');
         toMenu();
     })
 };
@@ -97,9 +91,9 @@ function toMenu() {
     ]) .then (answers => {
         if (answers.menu === "Add another team member") {
             addTeamMember();
-        } else if (answers.menu === "Create team profile") {
+        } else if (answers.menu === "Finish") {
             console.log('Team Profile has been generated')
-            generateHTML();
+            return teamProfile;
         }
     })
 };
@@ -115,21 +109,21 @@ function addTeamMember() {
         }
     ]) .then (input => {
         if (input.role === 'Manager') {
-            managerQuery();
+            managerPrompt();
         } else if (input.role === 'Engineer') {
-            engineerQuery();
+            engineerPrompt();
         } else if (input.role === 'Intern') {
-            internQuery();
+            internPrompt();
         }
     })
 };
 
 // Prompt user for Engineer information
-function engineerQuery() {
+function engineerPrompt() {
     return inquirer.prompt ([
         {
             type: 'input',
-            name: 'name',
+            name: 'engineerName',
             message: "Please enter Engineer's name: ",
             validate: input => {
                 if (input) {
@@ -142,7 +136,7 @@ function engineerQuery() {
         },
         {
             type: 'input',
-            name: 'id',
+            name: 'engineerId',
             message: "Please enter Engineer's ID: ",
             validate: input => {
                 if (isNaN(input)) {
@@ -155,37 +149,31 @@ function engineerQuery() {
         },
         {
             type: 'input',
-            name: 'email',
+            name: 'engineerEmail',
             message: "Please enter Engineer's email: ",
-            validate: email => {
-                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
-                if (email) {
-                    return true;
-                } else {
-                    console.log('*Please enter a valid email address!*');
-                    return false;
-                }
+            validate: engineerEmail => {
+                return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(engineerEmail)
             }
         },
         {
             type: 'input',
-            name: 'github',
+            name: 'engineerGithub',
             message: "Please enter Engineer's GitHub username: ",
         }
     ]) // stores engineer information to team array
     .then (input => { 
-        const engineer = new Engineer (input.name, input.id, input.email, input.github);
-        team.push(engineer);
+        const engineer = new Engineer (input.engineerName, input.engineerId, input.engineerEmail, input.engineerGithub);
+        teamProfile.push(engineer);
         console.log('Engineer successfully added to the team!' + engineer);
         toMenu();
     })
 };
 
-function internQuery() {
+function internPrompt() {
     return inquirer.prompt ([
         {
             type: 'input',
-            name: 'name',
+            name: 'internName',
             message: "Please enter Intern's name: ",
             validate: input => {
                 if (input) {
@@ -198,7 +186,7 @@ function internQuery() {
         },
         {
             type: 'input',
-            name: 'id',
+            name: 'internId',
             message: "Please enter Intern's ID: ",
             validate: input => {
                 if (isNaN(input)) {
@@ -211,27 +199,21 @@ function internQuery() {
         },
         {
             type: 'input',
-            name: 'email',
+            name: 'internEmail',
             message: "Please enter Intern's email: ",
-            validate: email => {
-                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
-                if (email) {
-                    return true;
-                } else {
-                    console.log('*Please enter a valid email address!*');
-                    return false;
-                }
+            validate: internEmail => {
+                return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(internEmail)
             }
         },
         {
             type: 'input',
-            name: 'school',
+            name: 'internSchool',
             message: "Please enter Intern's school: ",
         }
     ]) // stores intern information to team array
     .then (input => { 
-        const intern = new Intern (input.name, input.id, input.email, input.school);
-        team.push(intern);
+        const intern = new Intern (input.internName, input.internId, input.internEmail, input.internSchool);
+        teamProfile.push(intern);
         console.log(intern + 'Intern successfully added to the team!');
         toMenu();
     })
@@ -239,6 +221,7 @@ function internQuery() {
 
 
 init();
+
 
 // External Links:
 // Email validation using Inquirer: https://gist.github.com/Amitabh-K/ae073eea3d5207efaddffde19b1618e8
