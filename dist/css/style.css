@@ -1,0 +1,95 @@
+:root {
+  --red: #ED6A5A;
+  --light: #F4F1BB;
+  --intern: #C8D9BC;
+  --engineer: #9BC1BC;
+  --manager: #3c6675;
+  --playfair: 'Playfair Display', serif;
+  --voltaire: 'Voltaire', sans-serif;
+  --beba: 'Bebas Neue', cursive;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--playfair);
+}
+
+header {
+  min-width: 500px;
+  width: 100%;
+  background-color: var(--red);
+  color: white;
+  text-align: right;
+  margin-bottom: 25px;
+  font-size: 5rem;
+}
+
+.header-text {
+  font-family: var(--beba);
+  position: relative;
+  top: 39px; right: 5px;
+}
+
+.my {
+  color: black;
+  opacity: 10%;
+  position: relative;
+  top: -3px;
+}
+
+.card {
+  height: 200px;
+  min-width: 500px;
+}
+
+/* bg icons */
+.iconage {
+  font-size: 10rem;
+  opacity: 10%;
+  position: absolute;
+  top: -25px; left: 200px;
+}
+
+.card-contents {
+  margin: 10px;
+  padding: 10px;
+  font-family: var(--voltaire);
+}
+
+.eyeD,
+.address {
+  font-size: 25px;
+  opacity: 50%;
+}
+
+/* Manager Card Styles */
+#managerRole {
+  background-color: var(--red);
+}
+#managerName {
+  background-color: var(--light);
+}
+
+/* Engineer Card Styles */
+#engineerRole {
+  background-color: var(--engineer);
+}
+#engineerName {
+  background-color: var(--light);
+}
+
+/* Intern Card Styles */
+#internRole {
+  background-color: var(--intern);
+}
+#internName {
+  background-color: var(--light);
+}
+
+
+
