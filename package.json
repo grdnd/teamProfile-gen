@@ -1,32 +1,31 @@
 {
-  "name": "teamprofile-gen",
+  "name": "my-team-profile-generator",
   "version": "1.0.0",
-  "description": "A team profile generator buit with Node.js",
+  "description": "A team profile generator powered by JavaScript and Node Inquirer that renders team profile information in HTML and CSS",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/grdnd/teamProfile-gen.git"
+    "url": "github.com/grdnd/myTeamProfile"
   },
   "keywords": [
     "team",
     "profile",
-    "gen",
-    "generator"
+    "generator",
+    "Node",
+    "JavaScript"
   ],
   "author": "Gordon Do",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/grdnd/teamProfile-gen/issues"
-  },
-  "homepage": "https://github.com/grdnd/teamProfile-gen#readme",
+  "license": "MIT",
   "dependencies": {
-    "inquirer": "^8.2.0",
-    "jest": "^27.5.1"
+    "fs": "^0.0.1-security",
+    "fs-extra": "^10.1.0",
+    "inquirer": "^8.2.2",
+    "path": "^0.12.7"
   }
 }
