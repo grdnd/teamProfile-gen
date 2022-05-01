@@ -45,6 +45,8 @@ header {
 .card {
   height: 200px;
   min-width: 500px;
+  width: 70%;
+  margin: auto auto;
 }
 
 /* bg icons */
