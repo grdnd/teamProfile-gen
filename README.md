@@ -14,6 +14,8 @@ followed by `npm i` to install dependencies
 
 ## Usage
 
+![My Team Profile](https://user-images.githubusercontent.com/93315369/169628283-010f22aa-ce1f-45be-b4cc-695f148ffb4b.gif)
+
 [Check out our demonstration video here!](https://youtu.be/9U-OU5rjTvA)
 
 After our dependencies are successfully installed, we can run:
