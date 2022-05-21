@@ -4,7 +4,7 @@
 
 ## Description
 
-The **Team Profile Generator** is a Node.js command-line application that can easily build a software engineering team based off the employee information that we provide to `Inquirer.js`. Once the user prompts have been answered, a fully styled web page built with `HTML` and `CSS` will be generated and populated with our user data. 
+The **Team Profile Generator** is a Node.js command-line application that can easily build a software engineering team based off the employee information that we provide to `Inquirer.js`. Once the user prompts have been answered, a fully styled web page built with `HTML` and `CSS` will be generated and populated with our user data.
 
 ## Installation
 
@@ -13,6 +13,8 @@ First run `npm init` to create a new package,
 followed by `npm i` to install dependencies
 
 ## Usage
+
+[Check out our demonstration video here!](https://youtu.be/9U-OU5rjTvA)
 
 After our dependencies are successfully installed, we can run:
 
